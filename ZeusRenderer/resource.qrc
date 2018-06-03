@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>shaders/debug.frag</file>
+        <file>shaders/debug.vert</file>
+        <file>shaders/sky.frag</file>
+        <file>shaders/sky.vert</file>
+        <file>shaders/terrain.frag</file>
+        <file>shaders/terrain.vert</file>
+        <file>shaders/instance.frag</file>
+        <file>shaders/Entity.frag</file>
+        <file>shaders/Entity.vert</file>
+        <file>shaders/Instance.frag</file>
+        <file>shaders/Instance.vert</file>
+        <file>shaders/Animation.frag</file>
+        <file>shaders/Animation.vert</file>
+        <file>shaders/DeferredRender.frag</file>
+        <file>shaders/DeferredRender.vert</file>
+        <file>shaders/Shadow/Animation_Shadow.vert</file>
+        <file>shaders/Shadow/Entity_Shadow.vert</file>
+        <file>shaders/Shadow/Instance_Shadow.vert</file>
+        <file>shaders/Shadow/Simple_Shadow.frag</file>
+        <file>shaders/GaussianBlur.comp</file>
+        <file>shaders/Combine.frag</file>
+    </qresource>
+</RCC>
