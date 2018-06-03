@@ -18,6 +18,6 @@ Third person camera
 
 Fog
 
-I'm satify with current framework, it's likely to refactor in the future. 
+I'm not satify with current framework, it's likely to refactor in the future. 
 
 ![picture](https://github.com/ZeusYang/Zeus3D/blob/master/screenshot/1.png)
