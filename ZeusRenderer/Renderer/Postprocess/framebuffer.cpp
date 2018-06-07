@@ -24,11 +24,20 @@ FrameBuffer::~FrameBuffer()
     GlobalContext::contextFunc->glDeleteFramebuffers(1,&fboId);
 }
 
-void FrameBuffer::addColorBuffer(int precision, int component)
+void FrameBuffer::addColorBuffer(int precision, int component, int w, int h)
 {
     // add a new color buffer component to frame buffer
     ++colorBufferCount;
-    colorBuffers.push_back(new FrameTexture2D(width,height,
+    int wi,he;
+    if(w == -1 || h == -1){
+        wi = width;
+        he = height;
+    }
+    else{
+        wi = w;
+        he = h;
+    }
+    colorBuffers.push_back(new FrameTexture2D(wi,he,
                                               FrameTexture2D::TEXTURE_TYPE_COLOR,
                                               precision,component));
     GlobalContext::contextFunc->glBindFramebuffer(GL_FRAMEBUFFER,fboId);

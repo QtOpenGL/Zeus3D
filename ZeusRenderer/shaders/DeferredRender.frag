@@ -76,12 +76,11 @@ void main() {
 	}
 
 	// 5. calc fog effect
-	FragColor = CalcFog(FragColor,fog,texture(depthBuffer,vTexcoord).r);
+	//FragColor = CalcFog(FragColor,fog,texture(depthBuffer,vTexcoord).r);
 
 	// extract bright part
-	//float brightness = dot(FragColor, vec3(0.7152, 0.2126, 0.0722));
-   //if(brightness > 0.7)
-		BrightColor = vec4(FragColor,1.0f);
+	float brightness = (FragColor.x + FragColor.y + FragColor.z);
+   if(brightness >= 1.0)BrightColor = vec4(FragColor,1.0f);
 	SceneColor = vec4(FragColor,1.0f);
 	
 /*	BrightColor = FragColor-vec3(1.0f);*/

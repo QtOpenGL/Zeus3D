@@ -7851,7 +7851,8 @@ release/GaussianBlur.o: ../ZeusRenderer/Renderer/Postprocess/GaussianBlur.cpp ..
 		../ZeusRenderer/Renderer/Debug/OpenGLMarkerScoped.h \
 		../ZeusRenderer/Renderer/Debug/OpenGLProfiler.h \
 		E:/Qt5.10.0/5.10.0/mingw53_32/include/QtGui/QOpenGLFunctions_3_3_Core \
-		E:/Qt5.10.0/5.10.0/mingw53_32/include/QtGui/qopenglfunctions_3_3_core.h
+		E:/Qt5.10.0/5.10.0/mingw53_32/include/QtGui/qopenglfunctions_3_3_core.h \
+		E:/Qt5.10.0/5.10.0/mingw53_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\GaussianBlur.o ..\ZeusRenderer\Renderer\Postprocess\GaussianBlur.cpp
 
 release/BloomEffect.o: ../ZeusRenderer/Renderer/Postprocess/BloomEffect.cpp ../ZeusRenderer/Renderer/Postprocess/BloomEffect.h \

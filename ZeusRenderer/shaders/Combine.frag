@@ -9,14 +9,9 @@ out vec4 FragColor;
 
 void main()
 {             
-/*    const float gamma = 2.2;
-    vec3 hdrColor = texture(scene, vTexcoord).rgb;      
-    vec3 bloomColor = texture(bloomBlur, vTexcoord).rgb;
-    hdrColor += bloomColor; // additive blending
-    // tone mapping
-    vec3 result = vec3(1.0) - exp(-hdrColor * exposure);
-    // also gamma correct while we're at it       
-    result = pow(result, vec3(1.0 / gamma));*/
-	vec3 result = texture(bloomTexture,vTexcoord).xyz;
-    FragColor = vec4(result, 1.0f);
-}
+	vec3 result = texture(sceneTexture,vTexcoord).xyz + texture(bloomTexture,vTexcoord).xyz;
+	result = vec3(1.0) - exp(-result * 1.0);
+/*	const float gamma = 2.2;
+	result = pow(result, vec3(1.0 / gamma));*/
+	FragColor = vec4(result, 1.0f);
+}	

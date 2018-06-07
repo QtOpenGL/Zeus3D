@@ -88,6 +88,7 @@ void Render::initEnvironment()
     tmp->setInt("image",0);
     // bloom combined
     tmp = shaders->findShader("Combine");
+    tmp->use();
     tmp->setInt("sceneTexture",0);
     tmp->setInt("bloomTexture",1);
     tmp->setFloat("exposure",2.0f);

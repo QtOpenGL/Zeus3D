@@ -32,7 +32,7 @@ public:
     ~FrameBuffer();
 
     // Adder
-    void addColorBuffer(int precision, int component);
+    void addColorBuffer(int precision, int component, int w = -1, int h = -1);
     void attachDepthBuffer(int precision);
 
     // Getter/Using

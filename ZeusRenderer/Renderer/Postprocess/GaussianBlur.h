@@ -15,8 +15,7 @@ class GaussianBlur
 public:
     GaussianBlur(ShaderProgram *shader);
     ~GaussianBlur();
-    void blurProcess(FrameTexture2D *horizontal,
-                     FrameTexture2D *vertical);
+    void blurProcess(FrameTexture2D *input,FrameTexture2D *output);
 
 private:
     ShaderProgram *blurShader;

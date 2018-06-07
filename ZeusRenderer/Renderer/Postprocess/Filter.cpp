@@ -35,9 +35,9 @@ Filter::~Filter()
 }
 
 void Filter::renderDeferred(Camera3D *camera, Render *render,RenderState *state,
-                  const std::vector<FrameTexture2D*> &inputTextures,
-                  const FrameTexture2D* depthTexture,
-                  const FrameTexture2D* shadowTexture)
+                            const std::vector<FrameTexture2D*> &inputTextures,
+                            const FrameTexture2D* depthTexture,
+                            const FrameTexture2D* shadowTexture)
 {
     render->clearTextureSlots();
     render->useShader(state->shader);
@@ -59,11 +59,10 @@ void Filter::renderBloom(Camera3D *camera, Render *render, RenderState *state)
     if(!bloom)return;
     render->clearTextureSlots();
     render->useShader(state->shader);
-    uint bufferid = 0;
     render->useTexture(Render::TEXTURE_2D,
-                       bufferid,bloom->getFramebuffer()->getColorBuffer(0)->id);
+                       0,bloom->getFramebuffer()->getColorBuffer(0)->id);
     render->useTexture(Render::TEXTURE_2D,
-                       bufferid,bloom->getFramebuffer()->getColorBuffer(1)->id);
+                       1,bloom->getFramebuffer()->getColorBuffer(1)->id);
     render->render(camera, boardEntity, state);
 }
 

@@ -48,11 +48,11 @@ void EngineController::draw()
     render->setFrameBuffer(renderMgr->getDeferredFramebuffer());
     renderMgr->renderScene(render, *camera, scene);
     //3. deferred rendering
-    render->setFrameBuffer(nullptr);
+    render->setFrameBuffer(renderMgr->getBloomFramebuffer());
     renderMgr->renderDeferred(render,*camera);
     //4. bloom blur
-//    render->setFrameBuffer(nullptr);
-//    renderMgr->renderBloom(render,*camera);
+    render->setFrameBuffer(nullptr);
+    renderMgr->renderBloom(render,*camera);
 }
 
 void EngineController::update(long startTime, long currentTime)
@@ -178,7 +178,7 @@ void EngineController::initScene()
         float pz = 30.0f*sin(3.1415/180.0*x);
         scene->setEntityTranslate(name,QVector3D(px,0.0f,pz));
         scene->pushEntityToRender(name,this->renderMgr);
-        renderMgr->addLighting(name,new PointLight(QVector3D(px,12,pz)));
+        renderMgr->addLighting(name,new PointLight(QVector3D(px,15,pz)));
         ++ord;
     }
     scene->addStaticEntity("lampcenter","lamp_draw",meshes["lamp"],nullptr);
